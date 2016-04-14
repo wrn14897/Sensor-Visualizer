@@ -1,5 +1,5 @@
 #Sensor Visualizer <br />
-<!--![alt tag](https://github.com/cs107e/wrn14897-project/blob/master/imgs/demoImg.jpg) <br />-->
+<!--![alt tag](https://github.com/wrn14897/Sensor-Visualizer/blob/master/imgs/demoImg.jpg) <br />-->
 Hardware: Raspberry Pi, ADC(MCP3008), Test Sensors(microphone module, photoresistor) <br />
 Description: Sensor Visualizer is a console program for ARM embedded system (Raspberry Pi) which visualizes the data read from 'Analog to Digital Converter' (MCP3008). Currently it has two kinds of modes to visulize the data, in which user can interact with it by several simple commands.<br />
 ##SPI input driver 
@@ -12,10 +12,10 @@ Description: Sensor Visualizer is a console program for ARM embedded system (Ras
     https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/connecting-the-cobbler-to-a-mcp3008 
     - Circuit sketch: <br />
     The variable resistor here can be replaced with different sensors. The following is how we connent MCP3008 with Pi: 
-    ![alt tag](https://github.com/cs107e/wrn14897-project/blob/master/imgs/CircuitSketch.jpg) <br />
+    ![alt tag](https://github.com/wrn14897/Sensor-Visualizer/blob/master/imgs/CircuitSketch.jpg) <br />
     - Implementation: <br />
     Here we use bitbang SPI implementation described in [resource link](https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/script). The idea is to use general GPIO pins instead of SPI interface since it is not included in all distributions. 
-    ![alt tag](https://github.com/cs107e/wrn14897-project/blob/master/imgs/ADCtoPi.JPG) <br />
+    ![alt tag](https://github.com/wrn14897/Sensor-Visualizer/blob/master/imgs/ADCtoPi.JPG) <br />
     - Test: <br />
     To test the driver actually works, we use the console program to print out the data from different sensors. <br />
 
@@ -25,9 +25,9 @@ Description: Sensor Visualizer is a console program for ARM embedded system (Ras
   * Model design: <br />
     The model we are using to visualize the data is similar to the shape of automobile dashboard. Before drawing the model, we should build up 'draw_empty_circle()' function. Our result looks like (two modes): <br />
     - Mode 1 (volume bars) 
-      ![alt tag](https://github.com/cs107e/wrn14897-project/blob/master/imgs/demoBar.JPG) <br />
+      ![alt tag](https://github.com/wrn14897/Sensor-Visualizer/blob/master/imgs/demoBar.JPG) <br />
     - Mode 2 (dashboard) 
-      ![alt tag](https://github.com/cs107e/wrn14897-project/blob/master/imgs/demoCir.JPG) <br />  
+      ![alt tag](https://github.com/wrn14897/Sensor-Visualizer/blob/master/imgs/demoCir.JPG) <br />  
   * Optimization: <br />
     In order to speed up the clearing graphic process to synchronize the animation with input data, our implementation only clears the graphic buffer for specific range (the buffer would be updated each time). Also, we apply double buffer to avoid the circumstance that GPU and CPU both access the same memory location.  
 
